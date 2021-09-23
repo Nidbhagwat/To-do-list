@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+<title>Todo App</title>
+<link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Candal|Chewy&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+<script>
+  
+
+</script>
+
+
+
+
+
+</head>
+<body>
+<div class="todo-container">
+<h2>To-Do List</h2>
+<div class="todo">
+<form action="/" method="POST" class="todo-header">
+<input type="text" name="content" id="input_list" placeholder="to do list...">
+<button type="submit" id="submit_btn"><span class="fas fa-plus"></span></button>
+</form>
+<ul class="todo-list">
+     <%todoTasks.forEach(details => { %>
+        <li class="todo-list-item">
+        <div class="todo-list-item-name"><%= details.content %>
+        
+        <a href="/remove/<%= details._id %>" class="remove"><span class="fas fa-times"></span>
+        </a>
+        <a href="/edit/<%= details._id %>" class="edit"><span class="fas fa-edit"></span>
+        </a></div><br>
+        </li>
+        <% }) %>
+</ul>
+</div>
+</div>
+
+
+</body>
